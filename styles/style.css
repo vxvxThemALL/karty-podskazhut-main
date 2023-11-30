@@ -20,3 +20,237 @@ li,
 figure {
   margin: 0;
 }
+
+:root {
+  --bg-color: #F3EFEC;
+  --text-color: #312A4E;
+  --accent-color: #FFAB6B;
+  --main-font: Raleway;
+  --accent-font: 'STIX Two Text';
+}
+
+.theme_dark {
+  --bg-color: #171717;
+  --text-color: #B3B3B3;
+  --accent-color: transparent;
+}
+
+.page {
+  font-family: var(--main-font);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.heading {
+  font-family: var(--accent-font, sans-serif);
+  line-height: 90%;
+  text-align: center;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.header__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 5vi;
+  padding-block: 20px;
+  border-block: 1px solid currentColor;
+}
+
+.header__theme-toggler {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.header__theme-button {
+  border: none;
+  font-family: inherit;
+  color: currentColor;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 0;
+}
+
+.header__theme-button:hover {
+  text-decoration: underline;
+}
+
+.header__theme-button:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+.header__theme-button_is-active {
+  position: relative;
+  font-weight: 700;
+}
+
+.theme_dark .header__theme-button_is-active::after {
+  background-image: url(../images/pattern.svg);
+}
+
+.header__theme-button_is-active::after {
+  content: '';
+  position: absolute;
+  right: -.2em;
+  bottom: .18em;
+  background-color: var(--accent-color);
+  width: 4.5em;
+  height: calc(1em / 3);
+  z-index: -1;
+}
+
+.header__theme-button[disabled] {
+  pointer-events: none;
+}
+
+.content-section {
+  padding-inline: 5vi;
+}
+
+.header__title {
+  font-size: clamp(3.75rem, -0.9375rem + 15vw, 7.5rem);
+  margin-bottom: 40px;
+  padding-block-start: 10%;
+}
+
+.content__title {
+  font-size: 30px;
+  padding-block: 7vi 2.5vi;
+}
+
+.content__text-block .content__paragraph:not(:last-child) {
+  margin-block-end: 1em;
+}
+
+a {
+  color: inherit;
+}
+
+a:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+.content__blockquote {
+  margin-block-end: 1.5em;
+  margin-inline: auto;
+  width: 75%;
+  font-style: italic;
+  line-height: 200%;
+}
+
+.content__list {
+  padding-inline-start: 40px;
+  list-style: none;
+}
+
+.content__list-item {
+  position: relative;
+}
+
+.content__list-item::before {
+  content: '';
+  position: absolute;
+  left: -25px;
+  width: 15px;
+  height: 15px;
+  background-image: url(../images/marker-light.svg);
+  background-repeat: no-repeat;
+}
+
+.theme_dark .content__list-item::before {
+  background-image: url(../images/marker-dark.svg);
+}
+
+.content__list-item:not(:last-child) {
+  margin-block-end: 10px;
+}
+
+.content__text-block_type_frist-lettered .content__paragraph:first-of-type::first-letter {
+  display: block;
+  background-color: var(--accent-color);
+  font-size: 30px;
+  font-weight: 700;
+  padding: 0 4px;
+  margin-inline-end: 1px;
+}
+
+.theme_dark .content__text-block_type_frist-lettered .content__paragraph:first-of-type::first-letter {
+  border: 1px solid var(--text-color);
+}
+
+.content__figure {
+  margin-block: 7vi;
+  position: relative;
+  width: calc(100% + 10vi);
+  left: -5vi;
+}
+
+.content__picture {
+  width: 100%;
+}
+
+.content__figure-caption {
+  padding-block: 20px;
+  text-align: center;
+  border-block-end: 1px solid #312A4E;
+}
+
+.content__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid currentColor;
+  margin-block-start: 7vi;
+  width: 100%;
+  height: calc(90vi * 3 / 4);
+}
+
+.content__card-title {
+  font-size: 60px;
+  white-space: wrap;
+}
+
+.content__card-subtitle {
+  font-size: 18px;
+}
+
+.colored-text {
+  position: relative;
+  white-space: nowrap;
+}
+
+.colored-text::after {
+  content: '';
+  position: absolute;
+  right: -.1em;
+  bottom: .18em;
+  background-color: var(--accent-color);
+  width: 3.75em;
+  height: calc(1em / 3);
+  z-index: -1;
+}
+
+.theme_dark .colored-text::after {
+  background-image: url(../images/pattern.svg);
+}
+
+.footer {
+  margin-block-start: 10vi;
+  padding: 2.5vi;
+  border-block-start: 1px solid currentColor;
+  text-align: center;
+}
+
+.footer_copyright {
+  color: currentColor;
+}
+
+.theme_dark {
+  --bg-color: #171717;
+  --text-color: #B3B3B3;
+  --accent-color: transparent;
+}
+
